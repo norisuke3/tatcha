@@ -78,6 +78,11 @@ header .breadcram span.selected{
     width: 249px;
     height: 350px;
     text-align: center;
+    padding-top: 30px;
+}
+
+.product:hover {
+    background-color: #EEE;
 }
 
 .product .image img{

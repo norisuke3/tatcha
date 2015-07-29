@@ -4,6 +4,10 @@ $(document).ready(function(){
    *     - models
    */
   var Product = Backbone.Model.extend({
+    initialize: function(){
+      this.fetch();
+    },
+    idAttribute: "entity_id"
   });
 
   var ProductList = Backbone.Collection.extend({
@@ -20,10 +24,15 @@ $(document).ready(function(){
    */
   var ProductView = Backbone.View.extend({
     template: _.template($("#template-product").html()),
-    events:{},
+    events:{
+      "click": "link"
+    },
     render: function(){
       this.setElement(this.template(this.model.toJSON()));
       return this;
+    },
+    link: function(){
+      this.model.get('url') && ( location.href = this.model.get('url') );
     }
   });
 
