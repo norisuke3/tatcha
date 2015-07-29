@@ -1,3 +1,96 @@
+header{
+    font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+header .top-line {
+    top: 0px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    background-color: #430098;
+    color: white;
+    text-align: center;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+header .top-line span{
+    padding: 0 13px;
+}
+
+header .menu {
+    height: 60px;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 28px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header .menu-items {
+    width: 80%;
+    margin: auto;
+}
+
+header .menu-items .logo{
+    padding-top: 18.5px;
+}
+
+header .breadcrams{
+    margin-top: 89px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #f8f8f8;
+    font-size: 11px;
+}
+
+header .breadcram{
+    width: 80%;
+    margin: auto;
+    color: #4d4d4d;
+}
+
+header .breadcram span.separator{
+    padding: 0 9px;
+    color: #ccc;
+}
+
+header .breadcram span.selected{
+    font-weight: bold;
+}
+
+.contents {
+    width: 80%;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.contents .title{
+    font-family: utopia-std,Georgia,serif;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.product {
+    width: 249px;
+    height: 350px;
+    text-align: center;
+}
+
 .product .image img{
     width: 174px;
+}
+
+.product .name{
+    font-family: utopia-std,Georgia,serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+footer{
+    height: 200px;
+    background-color: #f8f8f8;
 }

@@ -54,6 +54,11 @@ $(document).ready(function(){
     update_list: function(collection){
       this.list = new ProductListView({ collection: collection, views: this.views });
       this.$(".product-list").replaceWith(this.list.render().el);
+
+      // initialize Masonry jQuery plugin
+      this.$('.product-list').masonry({
+	itemSelector: '.product'
+      });
     }
   });
 
