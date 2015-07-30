@@ -55,7 +55,9 @@ $(document).ready(function(){
 
   var ProductComponent = Backbone.View.extend({
     el: ".contents",
-    events: {},
+    events: {
+      "change select": "set_amount"
+    },
     initialize: function(){
       this.collection.on("reset", this.update_list, this);
       this.views = {};
@@ -68,6 +70,10 @@ $(document).ready(function(){
       this.$('.product-list').masonry({
 	itemSelector: '.product'
       });
+    },
+    set_amount: function(e){
+      var amount = e.currentTarget.value;
+      products.fetch({ reset: true, data: { limit: amount }});
     }
   });
 
