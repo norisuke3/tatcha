@@ -79,6 +79,13 @@ header .breadcram span.selected{
     height: 350px;
     text-align: center;
     padding-top: 30px;
+    border-radius: 3px;
+
+    -webkit-transition: background-color 0.15s linear;
+    -moz-transition: background-color 0.15s linear;
+    -ms-transition: background-color 0.15s linear;
+    -o-transition: background-color 0.15s linear;
+    transition: background-color 0.15s linear;
 }
 
 .product:hover {
@@ -96,6 +103,7 @@ header .breadcram span.selected{
 }
 
 footer{
+    margin-top: 30px;
     height: 200px;
     background-color: #f8f8f8;
 }
