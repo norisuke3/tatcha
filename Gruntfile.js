@@ -8,13 +8,14 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'javascripts/<%= pkg.name %>.js',
+        src: 'src/javascripts/<%= pkg.name %>.js',
         dest: 'dist/javascripts/<%= pkg.name %>.min.js'
       }
     },
     copy: {
       main: {
 	expand: true,
+	cwd: 'src',
 	src: ['javascripts/*.min.js', 'javascripts/*-min.js'],
 	dest: 'dist/'
       }
@@ -23,7 +24,7 @@ module.exports = function(grunt) {
       target: {
         files: [{
           expand: true,
-          cwd: 'css',
+          cwd: 'src/css',
 	  src: ['*.css'],
           dest: 'dist/css',
           ext: '.min.css'
@@ -33,7 +34,7 @@ module.exports = function(grunt) {
     processhtml: {
       dist: {
 	files: {
-	  'dist/products.html': ['products.html']
+	  'dist/products.html': ['src/products.html']
 	}
       }
     }
