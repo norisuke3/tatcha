@@ -30,7 +30,6 @@ header .menu {
 }
 
 header .menu-items {
-    width: 80%;
     margin: auto;
 }
 
@@ -38,7 +37,7 @@ header .menu-items .logo{
     padding-top: 18.5px;
 }
 
-header .breadcrams{
+header .breadcrumbs{
     margin-top: 89px;
     height: 32px;
     line-height: 32px;
@@ -46,25 +45,20 @@ header .breadcrams{
     font-size: 11px;
 }
 
-header .breadcram{
-    width: 80%;
+header .breadcrumb{
     margin: auto;
     color: #4d4d4d;
-}
-
-header .breadcram span.separator{
-    padding: 0 9px;
-    color: #ccc;
-}
-
-header .breadcram span.selected{
-    font-weight: bold;
+    padding: 0px 13px;
+    background-color: #f8f8f8;
 }
 
 .contents {
-    width: 80%;
     margin: auto;
     padding-top: 70px;
+}
+
+.contents .form-inline {
+    text-align: right;
 }
 
 .contents .title{
@@ -106,4 +100,51 @@ footer{
     margin-top: 30px;
     height: 200px;
     background-color: #f8f8f8;
+}
+
+@media (max-width: 500px){
+    .product-list {
+	width: 250px;
+	margin:auto;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+    .product-list {
+	width: 500px;
+	margin:auto;
+    }
+}
+
+@media (max-width: 767px){
+    .form-inline .form-control {
+	display: inline;
+	width: auto;
+    }
+
+    .form-inline .form-group {
+	display: inline-block;
+    }
+}
+
+@media (min-width: 768px){
+    .contents.container{
+	padding: 0px;
+    }
+
+    .product-list {
+	padding: 0px 0px;
+    }
+}
+
+@media (min-width: 992px){
+    .product-list {
+	padding: 0px 95px;
+    }
+}
+
+@media (min-width: 1200px){
+    .product-list {
+	padding: 0px 70px;
+    }
 }
