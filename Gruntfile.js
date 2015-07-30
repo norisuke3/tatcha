@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       main: {
 	expand: true,
 	cwd: 'src',
-	src: ['javascripts/*.min.js', 'javascripts/*-min.js'],
+	src: ['javascripts/*.min.js', 'javascripts/*-min.js', 'fonts/*'],
 	dest: 'dist/'
       }
     },
