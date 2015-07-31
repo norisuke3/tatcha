@@ -1,4 +1,12 @@
 $(document).ready(function(){
+  var amount = 10;
+  var page = 1;
+  var total_amount = 104;
+
+  var get_last_page = function(){
+    return Math.ceil( total_amount / amount );
+  };
+
   /** ------------------
    *   Product
    *     - models
@@ -54,13 +62,18 @@ $(document).ready(function(){
   });
 
   var ProductComponent = Backbone.View.extend({
+    template: _.template($("#template-pagination").html()),
     el: ".contents",
     events: {
-      "change select": "set_amount"
+      "change select.amount": "set_amount",
+      "click .pagination li": "set_page"
     },
     initialize: function(){
       this.collection.on("reset", this.update_list, this);
       this.views = {};
+
+      this.update_pagination();
+      $('li.page1').addClass("active");
     },
     update_list: function(collection){
       this.list = new ProductListView({ collection: collection, views: this.views });
@@ -68,12 +81,29 @@ $(document).ready(function(){
 
       // initialize Masonry jQuery plugin
       this.$('.product-list').masonry({
-	itemSelector: '.product'
+        itemSelector: '.product'
       });
     },
     set_amount: function(e){
-      var amount = e.currentTarget.value;
-      products.fetch({ reset: true, data: { limit: amount }});
+      amount = e.currentTarget.value;
+      this.update_pagination();
+      this.refresh();
+    },
+    set_page: function(e){
+      page = e.currentTarget.textContent.trim();
+      this.refresh();
+    },
+    refresh: function(){
+      $("li.page").removeClass("active");
+      $("li.page"+page).addClass("active");
+      products.fetch({ reset: true, data: { limit: amount, page: page }});
+    },
+    update_pagination: function(){
+      page = 1;
+      $("li.page").remove();
+      for(var i = 1; i <= get_last_page() ; i++){
+        this.$('ul.pagination').append(this.template({ page: i }));
+      }
     }
   });
 

@@ -25,19 +25,19 @@
         FREE U.S. SHIPPING & RETURNS<span>|</span>3 COMPLIMENTARY SAMPLES WITH EVERY ORDER
       </div>
       <div class="menu">
-	<div class="menu-items container">
+        <div class="menu-items container">
           <div class="logo">
-	    <img src="https://tatchaassets.com/tatcha/images/static/5bbf8d.tatcha@2x.png" class="" alt="Logo" height="26" width="156"/>
-	  </div>
+            <img src="https://tatchaassets.com/tatcha/images/static/5bbf8d.tatcha@2x.png" class="" alt="Logo" height="26" width="156"/>
+          </div>
 
-	</div>
+        </div>
       </div>
       <div class="breadcrumbs">
-	<ol class="breadcrumb container">
-	  <li>HOME</li>
-	  <li>SHOP</li>
-	  <li><b>TATCHA INTERVIEW PROJECT</b></li>
-	</ol>
+        <ol class="breadcrumb container">
+          <li>HOME</li>
+          <li>SHOP</li>
+          <li><b>TATCHA INTERVIEW PROJECT</b></li>
+        </ol>
       </div>
 
     </header>
@@ -48,22 +48,25 @@
 
       <div class="form-inline">
         <div class="form-group">
-	  <label for="item-count">Show </label>
-	  <select class="form-control">
-	    <option>10</option>
-	    <option>20</option>
-	    <option>30</option>
-	    <option>50</option>
-	    <option>100</option>
-	  </select>
-	</div>
+          <label for="item-count">Show </label>
+          <select class="form-control amount">
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+        </div>
 
-	<input type="checkbox" checked data-toggle='toggle'
-	                               data-on="<i class='glyphicon glyphicon-th'></i>"
-	                               data-off="<i class='glyphicon glyphicon-th-list'</i>"
-	                               data-onstyle="default"
-	                               data-offstyle="default"/>
 
+        <ul class="pagination"></ul>
+
+        <input type="checkbox" checked data-toggle='toggle'
+                                       data-on="<i class='glyphicon glyphicon-th'></i>"
+                                       data-off="<i class='glyphicon glyphicon-th-list'</i>"
+                                       data-onstyle="default"
+                                       data-offstyle="default"/>
+      </div>
       <div class="product-list"></div>
     </div>
 
@@ -78,6 +81,10 @@
         </div>
         <div class="name"><%= name %></div>
       </div>
+    </script>
+
+    <script  id="template-pagination" type="text/template">
+      <li class='page page<%= page %>'><a href="#"><%= page %></a></li>
     </script>
   </body>
 </html>

@@ -68,6 +68,11 @@ header .breadcrumb{
     margin-bottom: 70px;
 }
 
+.contents .pagination{
+    vertical-align: middle;
+    margin: 0px;
+}
+
 .product {
     width: 249px;
     height: 350px;
