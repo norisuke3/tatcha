@@ -2,6 +2,7 @@ $(document).ready(function(){
   var amount = 10;
   var page = 1;
   var total_amount = 104;
+  var urls = {};              // url cache
 
   var get_last_page = function(){
     return Math.ceil( total_amount / amount );
@@ -12,10 +13,15 @@ $(document).ready(function(){
    *     - models
    */
   var Product = Backbone.Model.extend({
+    idAttribute: "entity_id",
     initialize: function(){
-      this.fetch();
+      var url = urls[this.attributes.entity_id];
+      url && this.set({ url: url });
+      url || this.fetch({ success: this.on_success });
     },
-    idAttribute: "entity_id"
+    on_success: function(model, response, options){
+      urls[model.get('entity_id')] = model.get('url');
+    }
   });
 
   var ProductList = Backbone.Collection.extend({
